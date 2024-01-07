@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd 
+import matplotlib.pyplot as plt
 from matplotlib.pyplot import subplots 
 import statsmodels.api as sm 
 from statsmodels.stats.outliers_influence import variance_inflation_factor as VIF 
@@ -42,3 +43,11 @@ print(predictions.predicted_mean, '\n')
 print(predictions.conf_int(alpha=0.5), '\n')
 #prediction interval 
 print(predictions.conf_int(alpha=0.5, obs=True), '\n')
+
+#plot results
+
+#first, plot test data
+plot = data.plot.scatter('lstat', 'medv')
+plot.plot()
+plt.show()
+
